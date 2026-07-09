@@ -61,10 +61,39 @@ gradle assembleDebug
 # APK ra ở app/build/outputs/apk/debug/app-debug.apk
 ```
 
-### 3. GitHub Actions (nhẹ máy nhất, cần mạng + tài khoản GitHub)
-Push project này lên 1 repo, thêm workflow build APK bằng
-`actions/setup-java` + `gradle assembleDebug`, để GitHub build hộ rồi
-download APK từ tab Artifacts. Không tốn tài nguyên máy bạn.
+### 3. GitHub Actions (nhẹ máy nhất, cần mạng + tài khoản GitHub) ⭐
+
+Workflow đã có sẵn ở `.github/workflows/build.yml` — chỉ cần push code lên,
+GitHub sẽ tự build APK và cho bạn tải về, không tốn tài nguyên máy bạn.
+
+**Bước làm trong Termux:**
+
+```bash
+pkg install git
+
+cd OniBrowser
+git init
+git add .
+git commit -m "Oni Browser initial commit"
+
+# tạo repo mới trên github.com trước (repo rỗng, không cần README/license)
+git branch -M main
+git remote add origin https://github.com/<username>/<repo>.git
+git push -u origin main
+```
+
+**Lấy APK:**
+1. Vào repo trên GitHub → tab **Actions**.
+2. Chờ workflow "Build APK" chạy xong (vài phút, có dấu tick xanh).
+3. Bấm vào lần chạy đó → kéo xuống mục **Artifacts** → tải
+   `OniBrowser-debug-apk`.
+4. Giải nén file zip đó ra là được `app-debug.apk` — copy sang điện thoại
+   và cài (nhớ bật "Cho phép cài từ nguồn không rõ" trong Settings).
+
+**Ghi chú:** project không có file `gradlew` (vì không thể tạo file nhị
+phân `gradle-wrapper.jar` từ môi trường build này), nên workflow dùng
+action `gradle/actions/setup-gradle` để có sẵn lệnh `gradle` — không cần
+lo thiếu wrapper.
 
 ## Tùy biến thêm
 
