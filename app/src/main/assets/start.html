@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oni Browser</title>
+<style>
+  body {
+    margin: 0;
+    background: #0b0d0f;
+    color: #e6edf3;
+    font-family: "Courier New", monospace;
+    padding: 24px;
+  }
+  .ascii {
+    color: #7ee787;
+    white-space: pre;
+    font-size: 12px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .prompt {
+    color: #7ee787;
+  }
+  .cmd {
+    color: #e6edf3;
+  }
+  a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .links {
+    margin-top: 24px;
+    line-height: 2;
+  }
+  .links li {
+    list-style: none;
+  }
+  .links li::before {
+    content: "$ open ";
+    color: #7ee787;
+  }
+</style>
+</head>
+<body>
+<div class="ascii">
+ ____  __   __ ____
+(  _ \(  ) (  (_  _)
+ )   / )(__ )(  )(
+(__\_)(____(__)(__)
+</div>
+<div><span class="prompt">user@oni</span><span class="cmd">:~$</span> welcome to Oni Browser</div>
+<ul class="links">
+  <li><a href="https://duckduckgo.com">duckduckgo.com</a></li>
+  <li><a href="https://www.google.com">google.com</a></li>
+  <li><a href="https://github.com">github.com</a></li>
+  <li><a href="https://news.ycombinator.com">news.ycombinator.com</a></li>
+</ul>
+</body>
+</html>
