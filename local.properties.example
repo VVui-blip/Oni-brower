@@ -1,0 +1,3 @@
+# Đổi tên file này thành "local.properties" và sửa đường dẫn cho đúng máy bạn.
+# Ví dụ khi dùng Android SDK cmdline-tools cài trong proot-distro Ubuntu:
+sdk.dir=/root/android-sdk
