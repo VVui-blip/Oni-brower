@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Oni Browser</string>
+    <string name="new_tab">tab~$</string>
+    <string name="home_url">file:///android_asset/start.html</string>
+    <string name="url_hint">search or type a url</string>
+    <string name="ua_desktop">Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36</string>
+</resources>
