@@ -22,17 +22,22 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Accept SDK licenses
+        run: yes | sdkmanager --licenses || true
+
       - name: Install required SDK packages
         run: |
-          sdkmanager "platforms;android-33" "build-tools;33.0.2"
+          sdkmanager "platforms;android-34" "build-tools;34.0.0"
 
       # Project này không có gradlew (không thể tạo file wrapper nhị phân
       # từ máy build), nên dùng setup-gradle để có sẵn lệnh `gradle`.
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: "8.4"
 
       - name: Build debug APK
-        run: gradle assembleDebug --no-daemon
+        run: gradle assembleDebug --no-daemon --stacktrace
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
